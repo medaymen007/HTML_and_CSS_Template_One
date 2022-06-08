@@ -1,0 +1,502 @@
+    /*global rules*/
+    
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Open Sans', sans-serif;
+    }
+    /* code css for container */
+    
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /*this code for the size of all screen*/
+    
+    @media (min-width: 768px) {
+        .container {
+            width: 750px;
+        }
+    }
+    /*Medium */
+    
+    @media (min-width: 992px) {
+        .container {
+            width: 970px;
+        }
+    }
+    /*-Large- */
+    
+    @media (min-width: 1200px) {
+        .container {
+            width: 1170px;
+        }
+    }
+    /*end global rules*/
+    /*code of header (nav bar)*/
+    /*star variable*/
+    
+     :root {
+        --main-color: rgb(97, 220, 222)
+    }
+    /*end variable*/
+    
+    i {
+        color: var(--main-color);
+        transition: 1s;
+    }
+    /*animation for icon of search*/
+    
+    i:hover {}
+    /* end animation for icon of search*/
+    /**************code for make the scroll move with ralonti*****************/
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    /*************************************************** code of header *****************************************************/
+    
+    header {
+        padding-top: 20px;
+    }
+    
+    header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    header .links {
+        position: relative;
+    }
+    
+    header .container .links .icon {
+        width: 50px;
+        height: 25px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    
+    header .container .links .icon span {
+        background-color: black;
+        margin-bottom: 5px;
+    }
+    
+    header .container .links .icon span:first-child {
+        width: 100%;
+        height: 2px;
+    }
+    
+    header .container .links .icon span:nth-child(2) {
+        width: 60%;
+        height: 2px;
+        transition: 0.4s;
+    }
+    /****************************** for designer span nmbr two and make her width 100% *************************************/
+    
+    header .container .links:hover .icon span:nth-child(2) {
+        width: 100%;
+    }
+    /********************************************** end designer ********************************************************/
+    
+    header .container .links .icon span:last-child {
+        width: 100%;
+        height: 2.4px;
+    }
+    
+    header .links ul {
+        position: absolute;
+        list-style: none;
+        background: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        right: 0;
+        width: 200px;
+        top: 35px;
+        display: none;
+    }
+    
+    header .links ul::before {
+        content: "";
+        position: absolute;
+        border: 10px solid;
+        border-color: transparent transparent #f2f2f2 transparent;
+        right: 3px;
+        top: -20px;
+    }
+    
+    header .links ul li a {
+        display: block;
+        padding: 20px;
+        text-decoration: none;
+        color: black;
+        transition: 0.3s;
+    }
+    
+    header .links ul li :hover {
+        padding-left: 30px;
+    }
+    
+    header .links ul li:not(:last-child) a {
+        border-bottom: 3px solid #ddd;
+    }
+    /************************************************  end code header **************************************************/
+    /*********************************************** code Landing Section ***********************************************/
+    
+    .Landing {
+        height: 500px;
+        background-image: url(../image/jbal.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: 23px;
+    }
+    
+    .Landing .intro-Text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-direction: column;
+    }
+    
+    .Landing .intro-Text h1 {
+        color: var(--main-color);
+        font-weight: bold;
+        font-size: 45px;
+    }
+    
+    .Landing .intro-Text p {
+        text-align: center;
+        width: 350px;
+    }
+    /********************************************** end loading section  ********************************************/
+    /********************************************* star code features **************************************************/
+    
+    .features {
+        background-color: #f6f6f6;
+        padding: 20px;
+        margin-bottom: 25px;
+    }
+    
+    .features .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 20px;
+    }
+    
+    .features .container div {
+        text-align: center;
+    }
+    
+    .features .container div h3 {
+        font-weight: 800;
+    }
+    
+    .features .container div p {
+        color: #777;
+    }
+    /***************************************  star code special services ********************************************/
+    
+    .services .container {
+        text-align: center;
+    }
+    
+    .special-services {
+        color: #ebeced;
+        font-size: 98px;
+        font-weight: 900;
+        letter-spacing: -2px;
+        margin: 0
+    }
+    
+    .special-services+p {
+        font-size: 20px;
+        color: #797979;
+        margin: -29px;
+    }
+    /************ the word of service become not good in screen of mobile so we must to fix it with rul of media ************/
+    
+    @media (max-width:767px) {
+        .special-services {
+            color: #ebeced;
+            font-size: 46px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin: 0;
+        }
+        .special-services+p {
+            font-size: 11px;
+            color: #797979;
+            margin: -15px;
+        }
+    }
+    /**************************************************** star code of skills *****************************************/
+    
+    .skills {
+        margin-top: 80px;
+    }
+    
+    .skills .container .containerOfSkills {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 20px;
+    }
+    
+    .skills .ser {
+        display: flex;
+        margin-bottom: 30px;
+    }
+    
+    .skills .container .containerOfSkills div div p {
+        line-height: 1.8;
+        color: #797979;
+    }
+    
+    .skills i {
+        margin-right: 8px;
+    }
+    
+    .skills h4 {
+        margin: 0 0 10px;
+    }
+    /**************************************** part of img : make with before and after ********************************/
+    
+    .skills .img {
+        position: relative;
+    }
+    
+    .skills .img::after {
+        position: absolute;
+        content: "";
+        width: 283px;
+        height: 299px;
+        background-color: #f6f6f6;
+        z-index: 1;
+    }
+    
+    .skills .img::before {
+        position: absolute;
+        content: "";
+        width: 97px;
+        height: 343px;
+        background-color: rgb(4, 14, 59);
+        z-index: 0;
+        right: -320px;
+        top: -22px;
+    }
+    /* this code for hide the image when the width  of the screen littel than 999px */
+    
+    @media (max-width:999px) {
+        .skills .colThree {
+            display: none;
+        }
+    }
+    /*code for mobile screen*/
+    
+    @media (max-width:767px) {
+        .skills h4 {
+            margin: 20px;
+        }
+        .skills .ser {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+    /**************************************** code of loptop **********************************************/
+    
+    .loptop {
+        background-color: #f6f6f6;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    
+    .loptop .groupeOfLoptop {
+        margin-bottom: 20px;
+    }
+    
+    .loptop .groupeOfLoptop:first-child .img_one {
+        height: 200px;
+        background-image: url(../image/ordinateur.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: 23px;
+    }
+    
+    .loptop .img_two {
+        height: 200px;
+        background-image: url(../image/ordinateurOne.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: 23px;
+    }
+    
+    .loptop .groupeOfLoptop:last-child .img_three {
+        height: 200px;
+        background-image: url(../image/pc-portable.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: 23px;
+    }
+    
+    .loptop .groupeOfLoptop {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 20px;
+    }
+    
+    .loptop .The_whrite {
+        padding-left: 15px;
+    }
+    
+    .loptop h3 {
+        font-weight: bold;
+    }
+    
+    .loptop p {
+        line-height: 1.8;
+        color: #797979;
+    }
+    
+    .loptop .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .loptop button {
+        background-color: white;
+        border-color: #797979;
+        border-radius: 5px;
+        height: 50px;
+    }
+    /**************************************************** About ************************************************************/
+    
+    .about {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    
+    .about .groupeOfAbout {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .about .groupeOfAbout div {
+        margin: 50px;
+    }
+    
+    .about .img {
+        position: relative;
+        background-color: #f6f6f6;
+        width: 200px;
+        height: 200px;
+        z-index: 4;
+    }
+    
+    .af_Bef {
+        position: relative;
+    }
+    
+    .af_Bef::after {
+        position: absolute;
+        content: "";
+        background-color: var(--main-color);
+        width: 100px;
+        height: 180px;
+        bottom: 89px;
+        right: -67px;
+        z-index: 0;
+    }
+    
+    .af_Bef::before {
+        position: absolute;
+        content: "";
+        background-color: white;
+        height: 141px;
+        width: 50px;
+        bottom: 132px;
+        right: -69px;
+        z-index: 3;
+    }
+    
+    .about .info .special {
+        background-color: var(--main-color);
+        height: 3px;
+        width: 200px;
+    }
+    
+    .about .info-bold {
+        font-weight: bold;
+    }
+    
+    .about .info-special {
+        line-height: 1.8;
+        color: #797979;
+    }
+    /* this code for hide the image when the width  of the screen littel than 999px */
+    
+    @media (max-width:999px) {
+        .about .zone_img {
+            display: none;
+        }
+        .about .info .special {
+            width: 100px;
+        }
+    }
+    /*************************************** star code of contact ****************************************************************/
+    
+    .contact {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    
+    .contact .element {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .contact .info .special {
+        color: rgb(4, 4, 70);
+    }
+    
+    .contact .info .special2 {
+        color: var(--main-color);
+        margin-left: 20px;
+    }
+    
+    .contact .detais {
+        display: flex;
+        flex-direction: row;
+        margin-left: 40px;
+    }
+    
+    .contact .icon {
+        margin-top: 17px;
+        margin-left: 21px;
+    }
+    
+    .contact i {
+        margin-left: 6px;
+    }
+    
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80px;
+        color: white;
+        background-color: rgb(4, 4, 70);
+        text-align: center;
+    }
+    
+    span {
+        color: var(--main-color);
+    }
